@@ -7,9 +7,10 @@ type Props = {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement >
   ) => void;
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  id?: string;
 };
 
-export default function TaskForm({ formData, onChange, onSubmit }: Props) {
+export default function TaskForm({ formData, onChange, onSubmit, id }: Props) {
   return (
     <form onSubmit={onSubmit} className={styles.form}>
       <div className={styles.formGroup}>
@@ -50,7 +51,7 @@ export default function TaskForm({ formData, onChange, onSubmit }: Props) {
         />
       </div>
       <button type="submit" className={styles.submitButton}>
-        作成する
+        {id ? "更新する" : "作成する"}
       </button>
     </form>
   );
