@@ -1,5 +1,5 @@
 export type Priority = "high" | "medium" | "low";
-export type TaskFormData =Omit<Task, "id" | "status" | "createdAt" | "updatedAt">;
+export type TaskFormData =Omit<Task, "id" | "createdAt" | "updatedAt">;
 
 export interface Task {
   id: number;
